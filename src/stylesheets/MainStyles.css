@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+.mainContent {
+
+    display: inline-block;
+    position: relative;
+    left: 0;
+    max-width: 1200px;
+    width: 80%;
+    padding: 5%;
+    margin: 8% auto;
+    background-color: #5a5a5a;
+    border: 2px inset #72dffa;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 0 0 8px 6px #a0a0a0;
+    transition: 150ms ease;
+}
+
+.mainContent:hover {
+
+    border-radius: 40px;
+    box-shadow: 0 0 14px 12px #67cfff;
+}
+
+.mainBottomSpace {
+
+    padding-bottom: 20%;
+}
+
+.pageTitle {
+
+    display: inline-block;
+    background-color: #5a727c;
+    width: 80%;
+    padding: 1rem;
+    margin: 1rem 0;
+
+    border-bottom: 3px #57cfff double;
+    border-radius: 15px;
+
+    box-shadow: 2px 2px 5px 4px #4a94b1;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #57cfff, -1px -1px 3px #57cfff;
+    text-align: center;
+}
+
+/* RESPONSIVE PAGE ELEMENT RESIZING RULES */
+@media (max-width: 768px) {
+
+    .mainBottomSpace {
+
+        padding-bottom: 40%;
+    }
+
+    .pageTitle {
+
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .pageTitle {
+
+        font-size: 1.25rem;
+    }
+}

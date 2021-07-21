@@ -1,0 +1,786 @@
+@charset "UTF-8";
+
+html {
+
+    --input-error-left: 80%;
+    --form-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.formContainer {
+
+    display: inline-block;
+    position: relative;
+    left: 0;
+    max-width: 1000px;
+    width: 60%;
+    padding: 5%;
+    margin: 5% auto;
+    background-color: #5a5a5a;
+    border: 3px groove #72dffa;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 0 0 8px 6px #a0a0a0;
+    transition: 150ms ease;
+}
+
+.formContainer:hover {
+
+    border-radius: 40px;
+    box-shadow: 0 0 14px 12px #57cfff;
+}
+
+.formContainerLoaded {
+
+    animation-name: formContainerLoaded;
+    animation-duration: 750ms;
+}
+
+@keyframes formContainerLoaded {
+
+    from {
+
+        left: -100%;
+        background-color: #ffffff;
+        border: none;
+        box-shadow: 0 0 10px 8px #000000;
+        opacity: 0;
+    }
+    to {
+        
+        left: 0;
+        background-color: #5a5a5a;
+        border: 3px groove #72dffa;
+        box-shadow: 0 0 8px 6px #a0a0a0;
+        opacity: 1;
+    }
+}
+
+.formContainerDisappear {
+
+    animation-name: formContainerDisappear;
+    animation-duration: 750ms;
+}
+
+@keyframes formContainerDisappear {
+
+    from {
+
+        left: 0;
+        background-color: #5a5a5a;
+        border: 3px groove #72dffa;
+        box-shadow: 0 0 8px 6px #a0a0a0;
+        opacity: 1;
+    }
+    to {
+
+        left: 100%;
+        background-color: #ffffff;
+        border: none;
+        box-shadow: 0 0 10px 8px #000000;
+        opacity: 0;
+    }
+}
+
+.formTitle {
+
+    display: inline-block;
+    background-color: #5a727c;
+    width: 100%;
+    padding-bottom: 10px;
+    margin: 1rem 0;
+
+    border-bottom: 6px #57cfff double;
+    border-radius: 15px;
+
+    box-shadow: 2px 2px 5px 4px #4a94b1;
+    
+    font-family: var( --form-font-family );
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #57cfff, -1px -1px 3px #57cfff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+form {
+
+    display: inline-block;
+    width: 100%;
+}
+
+.inputContainer {
+
+    display: inline-block;
+    width: 90%;
+    margin: 0.75rem 5%;
+    text-align: left;
+    transition: 300ms ease;
+}
+
+.fieldLabel {
+
+    display: inline-block;
+    max-width: 90%;
+    margin: 0 7.5% 0.75rem 2.5%;
+
+    font-family: var( --form-font-family );
+    font-size: 1.25rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px #b0b0b0, -1px -1px 4px #b0b0b0;
+}
+
+.inputField {
+
+    display: inline-block;
+    width: 70%;
+    max-width: 600px;
+    height: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    margin-right: 30%;
+    
+    outline: none;
+
+    font-family: var( --form-font-family );
+    font-size: 1rem;
+    color: #000000;
+    text-shadow: 1px 1px 4px #c0c0c0, -1px -1px 4px #c0c0c0;
+
+    transition: 150ms ease;
+}
+
+.regularInput {
+
+    background-color: #ceffe8;
+    border: 3px #51ff4b solid;
+    border-radius: 8px;
+}
+
+.regularInput:hover {
+
+    box-shadow: 0 0 6px 6px #e0e0e0;
+}
+
+.regularInput:focus {
+
+    border: 5px #51ff4b ridge;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 0.5rem 0.5rem #56c7f3;
+}
+
+.invalidInput {
+
+    background-color: #ffd588;
+    border: 3px #ff0000 solid;
+    border-radius: 8px;
+}
+
+.invalidInput:hover {
+
+    box-shadow: 0 0 0.5rem 0.5rem #feffa7;
+}
+
+.invalidInput:focus {
+
+    border: 5px #ff0000 ridge;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 0.5rem 0.5rem #ffff00;
+}
+
+.inputRefresh {
+
+    opacity: 0;
+}
+
+/* Styles the clear button that appears on input elements after a user enters 
+ * text on Chromium (like Google Chrome) and Webkit (like Safari) browsers. */
+input::-webkit-clear-button {
+
+    color: #ff3000;
+}
+
+.octetInputWrapper {
+
+    display: inline-block;
+    width: 100%;
+    padding: 0 5%;
+    margin: 0.5rem 0;
+}
+
+.octetInputField {
+
+    display: inline-block;
+    width: 8%;
+    height: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0 0.5rem 0.5rem;
+    outline: none;
+
+    font-family: var( --form-font-family );
+    font-size: 1rem;
+    color: #000000;
+    text-shadow: 1px 1px 4px #c0c0c0, -1px -1px 4px #c0c0c0;
+
+    transition: 150ms ease;
+}
+
+.halfInputField {
+
+    display: inline-block;
+    width: 25%;
+    height: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0;
+    outline: none;
+
+    font-family: var( --form-font-family );
+    font-size: 1rem;
+    color: #000000;
+    text-shadow: 1px 1px 4px #c0c0c0, -1px -1px 4px #c0c0c0;
+
+    transition: 150ms ease;
+}
+
+.smallInputColors {
+
+    background-color: #ebf1ee;
+    border: 3px solid #59fac4;
+    border-radius: 0.5rem;
+}
+
+.smallInputColors:hover {
+
+    box-shadow: 0 0 0.25rem 0.25rem #6092ff;
+}
+
+.smallInputColors:focus {
+
+    border: 6px double #23b987;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem #1c64ff;
+}
+
+.labelBetweenText {
+
+    display: inline-block;
+    margin: 0 0.5rem;
+
+    font-family: var( --form-font-family );
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 10px #f0f0f0, -1px -1px 10px #f0f0f0;
+}
+
+.halfContainer {
+
+    display: inline-block;
+    width: 45%;
+    padding: 0;
+    margin: 1rem 2%;
+}
+
+/* Customize the label (the checkbox container) */
+.checkboxContainer {
+
+    display: inline-block;
+    position: relative;
+    width: 90%;
+    height: 2rem;
+	line-height: 2rem;
+    padding-left: 3rem;
+    margin: 0 5%;
+	
+    font-family: var( --form-font-family );
+    font-size: 1.25rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px #b0b0b0, -1px -1px 4px #b0b0b0;
+    text-align: left;
+    
+    cursor: pointer;
+}
+
+/* Hide the browser's default checkbox */
+.checkboxContainer input {
+
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.customCheckbox {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.75rem;
+    width: 1.75rem;
+    background-color: #e1fff1;
+    border: 2px solid #c0c0c0;
+    transition: 150ms ease;
+}
+
+/* On mouse-over, change the background color. */
+.checkboxContainer:hover input ~ .customCheckbox {
+
+    background-color: #bcffe0;
+}
+
+/* When the checkbox is checked, make it a darker background color. */
+.checkboxContainer input:checked ~ .customCheckbox {
+    
+    background-color: #20971c;
+}
+
+.customCheckbox:hover {
+
+    /* Legacy CSS box shadow properties */
+    -moz-box-shadow: 0 0 2px 2px #d0d0d0; /* Mozilla Firefox */
+    -webkit-box-shadow: 0 0 2px 2px #d0d0d0; /* Safari and Chrome */
+
+    /* Modern CSS box shadow property */
+    box-shadow: 0 0 2px 2px #d0d0d0;
+}
+
+/* Create the customCheckbox/indicator (hidden when not checked). */
+.customCheckbox:after {
+
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the customCheckbox when checked. */
+.checkboxContainer input:checked ~ .customCheckbox:after {
+
+    display: block;
+}
+
+/* Style the customCheckbox/indicator. */
+.checkboxContainer .customCheckbox:after {
+
+    left: 0.7rem;
+    top: 0.25rem;
+    width: 0.3rem;
+    height: 1rem;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.radioButtonsContainer {
+
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 1rem 0;
+}
+
+.radioOptionsWrapper {
+
+    display: inline-block;
+    width: 100%;
+    height: 2rem;
+}
+
+.radioOptionContainer {
+    
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    height: 2rem;
+	line-height: 2rem;
+    padding-left: 3rem;
+    margin: 0 0 0.5rem 5%;
+	
+    font-family: var( --form-font-family );
+    font-size: 1.25rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px #b0b0b0, -1px -1px 4px #b0b0b0;
+    text-align: left;
+    
+    cursor: pointer;
+}
+
+/* Hide the browser's default radio button */
+.radioOptionContainer input {
+	
+	display: none;
+}
+
+/* Create a custom radio button */
+.customRadioBubble {
+
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.75rem;
+    width: 1.75rem;
+    background-color: #e1fff1;
+    border: 2px solid #c0c0c0;
+    border-radius: 50%;
+    transition: 150ms ease;
+}
+
+/* On mouse-over, change the background color. */
+.radioOptionContainer:hover input ~ .customRadioBubble {
+
+	background-color: #bcffe0;
+    box-shadow: 0 0 0.25rem 0.25rem #d0d0d0; 
+}
+
+/* When the radio button is checked, add a blue background. */
+.radioOptionContainer input:checked ~ .customRadioBubble {
+
+	background-color: #20971c;
+}
+
+/* Create the radio button/indicator (hidden when not checked) */
+.customRadioBubble:after {
+
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the radio button when checked */
+.radioOptionContainer input:checked ~ .customRadioBubble:after {
+
+	display: inline-block;
+}
+
+/* Style the indicator (dot/circle) */
+.radioOptionContainer .customRadioBubble:after {
+
+	top: 0.44rem;
+	left: 0.44rem;
+	width: 0.9rem;
+	height: 0.9rem;
+	border-radius: 50%;
+	background: white;
+}
+
+.fieldErrorContainer {
+
+    display: inline-block;
+    width: 50%;
+    margin: 1rem 30% 0 7%;
+    transition: 200ms ease;
+}
+
+.fieldErrorRefresh {
+
+    overflow: hidden;
+    height: 0;
+    border: none;
+    opacity: 0;
+}
+
+.fieldErrorMessage {
+
+    display: inline-block;
+    position: relative;
+    left: 0;
+    width: 90%;
+    padding: 0.5rem 5%;
+
+    background-color: rgba(255, 140, 98, 0.5);
+    border: 1px #ffff00 solid;
+    border-radius: 10px;
+    outline: none;
+    opacity: 1;
+
+    font-family: var( --form-font-family );
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #ff0000, -1px -1px 2px #ff0000;
+}
+
+.hideInput {
+
+    display: none;
+}
+
+.fieldErrorAppear {
+
+    animation-name: fieldErrorAppear;
+    animation-duration: 100ms;
+}
+
+@keyframes fieldErrorAppear {
+
+    from {
+
+        left: -50%;
+        width: 45%;
+        background-color: #ff885d;
+        border: 4px #ff2f2f dashed;
+        opacity: 0.25;
+
+        font-size: 0.25rem;
+        color: #ffd900;
+        text-shadow: 1px 1px 6px #000000, -1px -1px 6px #000000;
+    }
+    to {
+        
+        left: 0;
+        width: 90%;
+        background-color: rgba(255, 140, 98, 0.5);
+        border: 1px #ffff00 solid;
+        opacity: 1;
+
+        font-size: 0.9rem;
+        color: #ffffff;
+        text-shadow: 1px 1px 2px #b62b2b, -1px -1px 2px #b62b2b;
+    }
+}
+
+.fieldErrorExit {
+
+    left: var( --input-error-left );
+    height: 0;
+    padding: 0;
+    border: none;
+    
+    animation-name: fieldErrorExit;
+    animation-duration: 500ms;
+}
+
+@keyframes fieldErrorExit {
+
+    0% {
+
+        left: 0;
+        height: 30px;
+    }
+    50% {
+
+        left: var( --input-error-left );
+        background-color: #0fdf04;
+        border: 4px #033100 solid;
+    }
+    100% {
+        
+        left: var( --input-error-left );
+        height: 0;
+        padding: 0;
+        border: none;
+    }
+}
+
+.fieldErrorItem {
+
+    display: none;
+    width: 100%;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+.fieldErrorList {
+
+    display: none;
+    width: 100%;
+    font-weight: bold;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+.fieldErrorList li {
+
+    display: list-item;
+    width: 85%;
+    padding: 0;
+    margin: 0.3rem 5% 0 10%; 
+}
+
+.inputDivider {
+
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    border: 1.5px solid #57cfff;
+    border-radius: 2px;
+    outline: none;
+    margin: 1.25rem 0;
+}
+
+.toggleContainer {
+
+    display: inline-block;
+    overflow: hidden;
+    max-height: 2000px;
+    text-align: left;
+    transition: 500ms ease-in-out;
+}
+
+.multiContainerSizing {
+
+    width: 90%;
+    margin: 2rem 5% 0 5%;
+}
+
+.subContainerSizing {
+
+    width: 90%;
+    margin: 1rem 5%;
+}
+
+.toggleDisappearance {
+
+    max-height: 0;
+}
+
+.formButtonWrapper {
+
+    display: inline-block;
+    width: 90%;
+    margin: 1rem 5%;
+    text-align: center;
+}
+
+.formButtonContainer {
+
+    display: inline-block;
+    width: 25%;
+    margin: 0 12%;
+    text-align: center;
+}
+
+.button {
+
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #4a94b1;
+    border: 3px groove #51ff4b;
+    border-radius: 8px;
+
+    transition: 150ms ease;
+    cursor: pointer;
+
+    font-family: var( --form-font-family );
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000, -1px -1px 2px #000000;
+}
+
+.buttonDisabled {
+
+    background-color: #a0a0a0;
+    border: 3px solid #303030;
+    cursor: auto;
+}
+
+.button[disabled]:not(.buttonDisabled) {
+
+    background-color: #a0a0a0;
+    border: 3px solid #ff0000;
+    cursor: auto;
+}
+
+.button:not(.buttonDisabled):not([disabled]):hover {
+
+    box-shadow: 0 0 5px 4px #e0e0e0;
+}
+
+.button:not(.buttonDisabled):not([disabled]):active {
+
+    background-color: #2150eb;
+    text-shadow: 1px 1px 1px #227e10, -1px -1px 1px #227e10;
+    border: 3px groove #227e10;
+    box-shadow: 0 0 5px 4px #3bdb1b;
+}
+
+/* RESPONSIVE PAGE ELEMENT RESIZING RULES */
+@media (max-width: 1000px) {
+
+    .loginFormTitle {
+
+        font-size: 1.5rem;
+    }
+
+    .fieldLabel {
+
+        font-size: 1rem;
+    }
+
+    .inputField {
+
+        width: 90%;
+        max-width: none;
+        margin-right: 10%;
+        font-size: 1rem;
+    }
+
+    .fieldErrorContainer {
+
+        width: 80%;
+        margin-right: 10%;
+    }
+
+    .inputDivider {
+
+        width: 100%;
+        margin: 0.75rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .formContainer {
+
+        width: 70%;
+    }
+
+    .inputContainer {
+
+        width: 100%;
+        margin: 0.75rem 0 0 0;
+    }
+
+    .formButtonWrapper {
+
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .inputContainer {
+
+        max-width: 275px;
+    }
+
+    .inputField {
+
+        width: 85%;
+        margin-right: 0;
+    }
+
+    .fieldErrorMessage {
+
+        padding: 0.5rem 10%;
+        font-size: 0.75rem;
+    }
+
+    .inputDivider {
+
+        margin: 1rem 0;
+    }
+
+    .formButtonWrapper {
+
+        margin-top: 1rem;
+    }
+
+    .button {
+
+        font-size: 0.85rem;
+        padding: 0.5rem 0.75rem;
+    }
+}

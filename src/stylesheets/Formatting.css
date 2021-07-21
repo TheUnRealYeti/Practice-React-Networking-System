@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+html {
+
+    font-size: 18px;
+}
+
+body {
+
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #202324;
+}
+
+div#root {
+
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.contentWrapper {
+
+    display: table;
+    width: 100%;
+    height: 100vh;
+}
+
+.contentCentering {
+
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Prevents a user from being able to select text or highlight an element. */
+.preventSelection {
+
+	/* Legacy or proprietary browser properties */
+	-khtml-user-select: none; /* Legacy Safari */
+	-webkit-touch-callout: none; /* Chrome and Safari */ 
+	-webkit-user-select: none; /* Chrome and Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+
+	/* Modern browser CSS property */
+	user-select: none;
+
+	/* Removes the hightlighting on an element by making it transparent. */
+	-webkit-tap-highlight-color: transparent; /* Chrome and Safari */
+}
