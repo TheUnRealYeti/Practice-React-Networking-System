@@ -3,6 +3,8 @@
 # DESCRIPTION: 
 This is a mock, front-end, account system, currently a work in progress, that I am creating to better learn and adapt my existing JavaScript programming skills to the React JavaScript framework. It includes login, account, and mock client-side session scheduling systems, as well as various forms for changing account or networking settings.
 
+Note that I have not run any NPM/NPX commands for production compilation of the project so far. My current source code also does not include any core React.js or Babel dependencies. Consequently, none of the source files will have default polyfilling or minification inside of them, as I'm aiming to show my current source code as I wrote it. The project is mostly written using ES6 JavaScript syntax, although I do include some backups for legacy APIs. The source code could be further backwards-transpiled to ES5 syntax for older browsers, like Internet Explorer 11, using Babel.
+
 # COPYRIGHT: 
 ******************************************************************************************************************************************************** 
 
